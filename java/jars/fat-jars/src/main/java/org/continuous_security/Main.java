@@ -1,22 +1,22 @@
 package org.continuous_security;
 
-import java.net.InetSocketAddress;
-import java.util.List;
-import java.util.ArrayList;
-
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
+import io.netty.buffer.EmptyByteBuf;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.handler.codec.dns.DnsResponseDecoder;
-import io.netty.buffer.PooledByteBufAllocator;
-import io.netty.buffer.ByteBufAllocator;
-import io.netty.buffer.EmptyByteBuf;
-import io.netty.buffer.ByteBuf;
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
   public static class MyDecoder extends DnsResponseDecoder {
     @Override
-    public void decode(ChannelHandlerContext ctx, DatagramPacket packet, List<Object> out) throws Exception {
+    public void decode(ChannelHandlerContext ctx, DatagramPacket packet, List<Object> out)
+        throws Exception {
       super.decode(ctx, packet, out);
     }
   }
@@ -34,7 +34,8 @@ public class Main {
 
     MyDecoder decoder = new MyDecoder();
     try {
-      // first argument is ChannelHandlerContext, but we will just pass in null to save trouble of instantiating it.
+      // first argument is ChannelHandlerContext, but we will just pass in null to save trouble of
+      // instantiating it.
       decoder.decode(null, myPacket, myResponses);
     } catch (Exception e) {
       // ignored. There's probably an error with passing in null to decode()
