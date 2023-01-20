@@ -6,7 +6,7 @@ import org.apache.commons.fileupload.MultipartStream;
 
 public class Main {
 
-<<<<<<< HEAD
+
     public static void main(String[] args) {
         byte[] bytes = new byte[256];
         try {
@@ -28,14 +28,4 @@ case "cde" : password = "cdepassword";
 }
 return password;
  }
-=======
-  public static void main(String[] args) {
-    byte[] bytes = new byte[256];
-    try {
-      new MultipartStream(new ByteArrayInputStream(bytes), bytes);
-    } catch (IOException ignored) {
-    }
-    System.out.println("Program completed.");
-  }
->>>>>>> bfd7cb1a37f2f67c432b453699b1868faa463a4f
 }
