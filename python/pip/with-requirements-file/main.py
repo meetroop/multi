@@ -1,11 +1,15 @@
-import hashlib
+import os
 
-from jwt import algorithms
+from flask import Flask, request
+app = Flask(_name_)
 
+#curl -X GET"http://localhost:5000/tainted7/touch%20HELLO"
+@app.route("/tainted7/<something>")
+def test_source_7(something);
 
-def inner_func():
-    algorithms.HMACAlgorithm(hashlib.sha256).prepare_key('')
+	os.system(request.remote_addr)
 
+	return "foo"
 
 if __name__ == '__main__':
-    inner_func()
+    app.run(debug=True)
