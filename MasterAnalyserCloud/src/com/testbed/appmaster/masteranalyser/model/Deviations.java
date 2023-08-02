@@ -9,6 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Deviations {
 
-	String classFQDN;
-	String deviationCode;
+  String classFQDN;
+  String deviationCode;
 }

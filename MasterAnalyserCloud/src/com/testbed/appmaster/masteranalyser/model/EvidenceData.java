@@ -9,17 +9,15 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class EvidenceData {
 
-	
-	private EVIDENCE_TYPE type;
-	
-	private EVIDENCE_CONFIDENCE confidence;
-	
-	private String source;
-	
-	private String evidenceName;
-	
-	private String actualEvidenceValue;
-	
-	private String deducedEvidenceValue;
+  private EVIDENCE_TYPE type;
 
+  private EVIDENCE_CONFIDENCE confidence;
+
+  private String source;
+
+  private String evidenceName;
+
+  private String actualEvidenceValue;
+
+  private String deducedEvidenceValue;
 }
